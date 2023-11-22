@@ -67,8 +67,7 @@ RUN echo "NODE_ENV=$NODE_ENV" > .env && \
 
 # Install dependencies
 RUN npm ci && \
-    npm run build && \
-    npm ci --omit=dev
+    npm run build
 
 # Expose the port the app will run on
 EXPOSE 3000
