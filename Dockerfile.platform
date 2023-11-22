@@ -87,8 +87,6 @@ RUN echo "REWORKD_PLATFORM_DATABASE_HOST=$REWORKD_PLATFORM_DATABASE_HOST" >> .en
     echo "REWORKD_PLATFORM_FRONTEND_URL=$REWORKD_PLATFORM_FRONTEND_URL" >> .env && \
     echo "REWORKD_PLATFORM_SID_REDIRECT_URI=$REWORKD_PLATFORM_SID_REDIRECT_URI" >> .env
 
-COPY .env /app/src/
-
 # Copying actual application
 RUN poetry install --only main
 
