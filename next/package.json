@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "next build --no-lint",
-    "dev": "next dev",
+    "build": "npx next build --no-lint",
+    "dev": "npx next dev",
     "postinstall": "prisma generate",
     "lint": "cross-env SKIP_ENV_VALIDATION=1 next lint --fix",
     "start": "next start",
@@ -55,6 +55,7 @@
     "remark-gfm": "^3.0.1",
     "superjson": "1.9.1",
     "tailwindcss-radix": "^2.8.0",
+    "typescript": "^5.3.2",
     "uuid": "^9.0.1",
     "zod": "^3.22.2",
     "zustand": "^4.3.7"
@@ -84,8 +85,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "prisma": "^4.9.0",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^5.3.2"
+    "tailwindcss": "^3.3.2"
   },
   "ct3aMetadata": {
     "initVersion": "7.4.0"
