@@ -42,11 +42,8 @@ ENV DATABASE_NAME=${DATABASE_NAME}
 ARG DATABASE_URL
 ENV DATABASE_URL=${DATABASE_URL}
 
-# Set the working directory
-WORKDIR /app/next
-
 # Copy package.json and package-lock.json to the working directory
-COPY ./next /app/next
+COPY ./next .
 
 # Writing all environment variables into a .env file
 RUN echo "NODE_ENV=$NODE_ENV" > .env && \
