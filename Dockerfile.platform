@@ -1,9 +1,7 @@
-FROM python:3.11-slim-buster as prod
+FROM python:3.11-slim-buster
 
 WORKDIR /app
 
-ARG PORT
-ENV PORT=$PORT
 ARG REWORKD_PLATFORM_DATABASE_HOST
 ENV REWORKD_PLATFORM_DATABASE_HOST=${REWORKD_PLATFORM_DATABASE_HOST}
 ARG REWORKD_PLATFORM_DATABASE_PORT
@@ -46,26 +44,12 @@ RUN apt-get update && apt-get install -y \
     gcc \
     pkg-config \
     openjdk-11-jdk \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+    build-essential
 
-RUN pip install poetry==1.4.2
+RUN pip install poetry
 
 # Configuring poetry
 RUN poetry config virtualenvs.create false
-
-# Copying requirements of a project
-COPY ./platform/pyproject.toml .
-
-# Installing requirements
-RUN poetry install --only main
-
-# Removing gcc
-RUN apt-get purge -y \
-    g++ \
-    gcc \
-    pkg-config \
-    && rm -rf /var/lib/apt/lists/*
 
 # Copying actual application
 COPY ./platform .
@@ -90,8 +74,9 @@ RUN echo "REWORKD_PLATFORM_DATABASE_HOST=$REWORKD_PLATFORM_DATABASE_HOST" >> .en
     echo "REWORKD_PLATFORM_SID_REDIRECT_URI=$REWORKD_PLATFORM_SID_REDIRECT_URI" >> .env
 
 # Copying actual application
-RUN poetry install --only main
+RUN poetry install
 
-CMD ["/usr/local/bin/python", "-m", "reworkd_platform", "--port", "$PORT"]
+EXPOSE 8000
 
-EXPOSE $PORT
+CMD poetry run python -m reworkd_platform
+
