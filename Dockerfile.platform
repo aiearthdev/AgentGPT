@@ -1,6 +1,9 @@
 FROM python:3.11-slim-buster as prod
 
+WORKDIR /app
 
+ARG PORT
+ENV PORT=$PORT
 ARG REWORKD_PLATFORM_DATABASE_HOST
 ENV REWORKD_PLATFORM_DATABASE_HOST=${REWORKD_PLATFORM_DATABASE_HOST}
 ARG REWORKD_PLATFORM_DATABASE_PORT
@@ -52,8 +55,7 @@ RUN pip install poetry==1.4.2
 RUN poetry config virtualenvs.create false
 
 # Copying requirements of a project
-COPY ./platform/pyproject.toml /app/src/
-WORKDIR /app/src
+COPY ./platform/pyproject.toml .
 
 # Installing requirements
 RUN poetry install --only main
@@ -66,7 +68,7 @@ RUN apt-get purge -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copying actual application
-COPY ./platform /app/src/
+COPY ./platform .
 
 # Writing all environment variables into a .env file
 RUN echo "REWORKD_PLATFORM_DATABASE_HOST=$REWORKD_PLATFORM_DATABASE_HOST" >> .env && \
@@ -90,6 +92,6 @@ RUN echo "REWORKD_PLATFORM_DATABASE_HOST=$REWORKD_PLATFORM_DATABASE_HOST" >> .en
 # Copying actual application
 RUN poetry install --only main
 
-CMD ["/usr/local/bin/python", "-m", "reworkd_platform"]
+CMD ["/usr/local/bin/python", "-m", "reworkd_platform", '--port', $PORT]
 
-EXPOSE 8000
+EXPOSE $PORT
