@@ -1,4 +1,4 @@
-from ssl import CERT_REQUIRED
+from ssl import CERT_PREFERRED
 
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncEngine, create_async_engine
@@ -20,8 +20,8 @@ def create_engine() -> AsyncEngine:
         )
 
     ssl_context = get_ssl_context(settings)
-    ssl_context.verify_mode = CERT_REQUIRED
-    connect_args = {"ssl": ssl_context}
+    ssl_context.verify_mode = CERT_PREFERRED
+    connect_args = {"ssl": {"ssl_mode": "PREFERRED"}}
 
     return create_async_engine(
         str(settings.db_url),
