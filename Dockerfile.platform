@@ -92,6 +92,6 @@ RUN echo "REWORKD_PLATFORM_DATABASE_HOST=$REWORKD_PLATFORM_DATABASE_HOST" >> .en
 # Copying actual application
 RUN poetry install --only main
 
-CMD ["/usr/local/bin/python", "-m", "reworkd_platform", '--port', $PORT]
+CMD ["/usr/local/bin/python", "-m", "reworkd_platform", "--port", "$PORT"]
 
 EXPOSE $PORT
