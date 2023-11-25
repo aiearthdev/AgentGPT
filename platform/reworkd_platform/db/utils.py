@@ -19,14 +19,14 @@ def create_engine() -> AsyncEngine:
             echo=settings.db_echo,
         )
 
-    ssl_context = get_ssl_context(settings)
-    ssl_context.verify_mode = CERT_REQUIRED
-    connect_args = {"ssl": {"ssl_mode": "PREFERRED"}}
+    # ssl_context = get_ssl_context(settings)
+    # ssl_context.verify_mode = CERT_REQUIRED
+    # connect_args = {"ssl": {"ssl_mode": "PREFERRED"}}
 
     return create_async_engine(
         str(settings.db_url),
         echo=settings.db_echo,
-        connect_args=connect_args,
+        # connect_args=connect_args,
     )
 
 
