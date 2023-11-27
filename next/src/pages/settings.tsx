@@ -105,8 +105,8 @@ const SettingsPage = () => {
                 helpText={
                   <span>
                     You can optionally use your own API key here. You can find your API key in your{" "}
-                    <a className="link" href="https://platform.openai.com/account/api-keys">
-                      OpenAI dashboard.
+                    <a className="link" href="https://api.aiearth.dev/token">
+                      AIO tokens.
                     </a>
                   </span>
                 }
