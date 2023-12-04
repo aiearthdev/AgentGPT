@@ -6,6 +6,7 @@ const AppTitle = () => {
   return (
     <div id="title" className="relative flex flex-col items-center">
       <div className="flex flex-row items-start">
+          
         <span
           className="text-4xl font-bold text-slate-12 xs:text-5xl sm:text-7xl"
           style={{
@@ -14,7 +15,9 @@ const AppTitle = () => {
         >
           智慧地球（AI·Earth）社区
         </span>
-        <br>
+      </div>
+      <div className="flex flex-row items-start">
+          
         <span
           className="text-4xl font-bold text-slate-12 xs:text-5xl sm:text-7xl"
           style={{
