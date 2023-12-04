@@ -27,17 +27,17 @@
     {
       "name":"AgentGPT",
       "icon":"user-ninja",
-      "url":"https://reworkd.ai/"
+      "url":"https://aio.aiearth.dev"
     },
     {
       "name": "GitHub",
       "icon": "github",
-      "url": "https://github.com/reworkd/AgentGPT"
+      "url": "https://aio.aiearth.dev"
     },
     {
       "name": "Discord",
       "icon": "discord",
-      "url": "https://discord.gg/qNWFxxRJNh"
+      "url": "https://aio.aiearth.dev"
     }
   ],
 
@@ -61,10 +61,10 @@
   ],
 
   "footerSocials": {
-    "github": "https://github.com/reworkd/AgentGPT",
-    "discord": "https://discord.gg/qNWFxxRJNh",
-    "twitter": "https://twitter.com/ReworkdAI",
-    "linkedin": "https://www.linkedin.com/company/reworkd/"
+    "github": "https://aio.aiearth.dev",
+    "discord": "https://aio.aiearth.dev",
+    "twitter": "https://aio.aiearth.dev",
+    "linkedin": "https://aio.aiearth.dev"
   },
 
   "backgroundImage": "/background.png"
