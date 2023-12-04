@@ -12,6 +12,14 @@ const AppTitle = () => {
             textShadow: "0px 5px 5px rgba(0, 0, 0, 0.1)",
           }}
         >
+          智慧地球（AI·Earth）社区
+        </span>
+        <span
+          className="text-4xl font-bold text-slate-12 xs:text-5xl sm:text-7xl"
+          style={{
+            textShadow: "0px 5px 5px rgba(0, 0, 0, 0.1)",
+          }}
+        >
           AgentGPT
         </span>
       </div>
@@ -20,7 +28,7 @@ const AppTitle = () => {
           <BannerBadge
             className="md:hidden"
             onClick={() => {
-              window.open("https://6h6bquxo5g1.typeform.com/to/qscfsOf1", "_blank");
+              window.open("https://aio.aiearth.dev", "_blank");
             }}
           >
             Automate your business with Agents
@@ -29,7 +37,7 @@ const AppTitle = () => {
         <div
           className="hidden md:flex"
           onClick={() => {
-            window.open("https://6h6bquxo5g1.typeform.com/to/qscfsOf1", "_blank");
+            window.open("https://aio.aiearth.dev", "_blank");
           }}
         >
           <BannerBadge>Interested in automating businesses with AI Agents? Apply here</BannerBadge>
