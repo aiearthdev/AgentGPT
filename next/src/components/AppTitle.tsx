@@ -8,7 +8,7 @@ const AppTitle = () => {
       <div className="flex flex-row items-start">
           
         <span
-          className="text-4xl font-bold text-slate-12 xs:text-5xl sm:text-7xl"
+          className="text-4xl font-bold text-slate-12 xs:text-3xl sm:text-5xl"
           style={{
             textShadow: "0px 5px 5px rgba(0, 0, 0, 0.1)",
           }}
